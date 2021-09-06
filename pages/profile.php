@@ -1,5 +1,5 @@
 <?php
-if ($_SESSION["connecté"] == 0 ):?>
+if (isset($_SESSION["connecté"]) == 0 ):?>
 <div class="container register">
     <div class="row">
 
@@ -35,7 +35,7 @@ if ($_SESSION["connecté"] == 0 ):?>
                 <div class="col-lg-4">
                     <div class="card mb-4">
                         <div class="card-body text-center">
-                            <img src="../assets/img/logo_placeholder.png" alt="avatar de <?= $_SESSION["pseudo"] ?>" class="rounded-circle img-fluid" style="width: 150px;">
+                            <img src="assets/img/logo_placeholder.png" alt="avatar de <?= $_SESSION["pseudo"] ?>" class="rounded-circle img-fluid" style="width: 150px;">
                             <h5 class="my-3"><?= $_SESSION["pseudo"] ?></h5>
                             <h6 class="text-muted mb-1"><strong>Score total: </strong><?= htmlspecialchars($score[0]["score_total"]) ?></h6>
                             <h6 class="text-muted mb-1"><strong>Meilleur score: </strong><?= htmlspecialchars($score[0]["meilleur_score"]) ?></h6>
@@ -75,6 +75,46 @@ if ($_SESSION["connecté"] == 0 ):?>
 
                         </div>
                     </div>
+
+
+                    <!-- Gestion des EMOJI -->
+                    <button class="btn btn-info" type="button" data-mdb-toggle="collapse"
+                            data-mdb-target="#collapseEmojiWin" aria-expanded="false"
+                            aria-controls="collapseEmojiWin">
+                        Mes emoji de victoire
+                    </button>
+
+                    <button class="btn btn-danger" type="button" data-mdb-toggle="collapse"
+                            data-mdb-target="#collapseEmojiLoose" aria-expanded="false"
+                            aria-controls="collapseEmojiLoose">
+                        Mes emoji de défaite
+                    </button>
+
+
+
+                    <!-- Affichage des EMOJI de victoire -->
+                    <div class="collapse mt-3" id="collapseEmojiWin">
+                        <a href="#" onclick="selEmoji();">
+                            <img class="emoji-preview" id="emoji" src="assets/img/emoji_goal.gif" alt="Emoji goal">
+                        </a>
+
+                        <img class="emoji-preview" src="assets/img/emoji_russian.gif" alt="Emoji russian">
+                        <img class="emoji-preview" src="assets/img/emoji_money.gif" alt="Emoji money">
+                        <img class="emoji-preview" src="assets/img/emoji_king.gif" alt="Emoji king">
+
+
+                    </div>
+
+
+
+                    <!-- Affichage des EMOJI de défaite -->
+                    <div class="collapse mt-3" id="collapseEmojiLoose">
+                        <img class="emoji-preview" src="assets/img/logo_placeholder.png">
+
+
+                    </div>
+
+
                 </div>
 
                 <h2>Historique des parties</h2>
