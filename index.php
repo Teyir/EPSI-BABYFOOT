@@ -19,7 +19,7 @@ require ("controller/db_connect.php")
 <head>
 
     <title>
-        Workshop B2 | <?= (isset($_GET['page'])) ? ucfirst($_GET['page'])  : "Workshop B2" ?>
+        Galactik Foosball | <?= (isset($_GET['page'])) ? ucfirst($_GET['page'])  : "Galactik Foosball" ?>
     </title>
 
 
@@ -34,18 +34,18 @@ require ("controller/db_connect.php")
     <meta name="apple-mobile-web-app-capable" content="#0396FF">
 
     <meta property="og:locale" content="fr_FR" />
-    <meta property="og:title" content="Workshop B2">
+    <meta property="og:title" content="Galactik Foosball">
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://workshopb2.fr">
+    <meta property="og:url" content="https://Galactik-Foosball.fr">
     <meta property="og:image" content="PENSER A METTRE URL DU LOGO">
-    <meta property="og:image:alt" content="Workshop B2 - Baby Foot">
-    <meta property="og:description" content="Workshop B2 - Baby Foot">
-    <meta property="og:site_name" content="Workshop B2" />
+    <meta property="og:image:alt" content="Galactik Foosball - Baby Foot">
+    <meta property="og:description" content="Galactik Foosball - Baby Foot">
+    <meta property="og:site_name" content="Galactik Foosball" />
 
 
     <meta name="author" content="Thomas, Mathurin, Cameron, Mael, Amauryne, Lisa" />
-    <meta name="publisher" content="Workshop B2"/>
-    <meta name="description" content="Workshop B2 - Baby Foot">
+    <meta name="publisher" content="Galactik Foosball"/>
+    <meta name="description" content="Galactik Foosball - Baby Foot">
     <meta name="copyright" content="Thomas, Mathurin, Cameron, Mael, Amauryne, Lisa"/>
 
 
