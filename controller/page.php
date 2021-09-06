@@ -19,6 +19,18 @@ if(isset($_GET['page']))
             include('pages/test.php');
             break;
 
+        case 'scoreboard':
+            unset($_GET['page']);
+            require_once('controller/scoreboard.php');
+            include('pages/scoreboard.php');
+            break;
+
+        case 'profile':
+            unset($_GET['page']);
+            require_once('controller/profile.php');
+            include('pages/profile.php');
+            break;
+
 
         // Si le get est inconnue on l'envoie sur une page d'erreur
         default:

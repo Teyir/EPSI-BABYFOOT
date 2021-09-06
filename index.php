@@ -19,7 +19,7 @@ require ("controller/db_connect.php")
 <head>
 
     <title>
-        Workshop B2 | <?= (isset($_GET['page'])) ? $_GET['page']  : "Workshop B2" ?>
+        Workshop B2 | <?= (isset($_GET['page'])) ? ucfirst($_GET['page'])  : "Workshop B2" ?>
     </title>
 
 
@@ -78,6 +78,8 @@ include('footer.php');
 
 <!-- SCRIPTS -->
 <script type="application/javascript" src="assets/js/custom.js"></script>
+
+<script type="application/javascript" src="assets/js/mdb.min.js"></script>
 <script type="application/javascript" src="assets/js/fa-all.js"></script>
 
 
