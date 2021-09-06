@@ -53,8 +53,8 @@ require ("controller/db_connect.php")
 
 
     <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/fa-all.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/mdb.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/fa-all.css">
     <link rel="stylesheet" type="text/css" href="assets/css/custom.css">
 
 </head>
@@ -77,11 +77,8 @@ include('footer.php');
 
 
 <!-- SCRIPTS -->
-<script type="application/javascript" src="assets/js/jquery.min.js"></script>
-<script type="application/javascript" src="assets/js/popper.min.js"></script>
-<script type="application/javascript" src="assets/js/bootstrap.min.js"></script>
 <script type="application/javascript" src="assets/js/custom.js"></script>
-<script type="application/javascript" src="assets/js/fa-all.min.js"></script>
+<script type="application/javascript" src="assets/js/fa-all.js"></script>
 
 
 

@@ -1,1 +1,1 @@
-CECI EST UNE PAGE D'ERREUR
+<?php

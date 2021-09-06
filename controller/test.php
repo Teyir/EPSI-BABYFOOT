@@ -1,1 +1,1 @@
-CECI EST LA PAGE DE TEST
+<?php
