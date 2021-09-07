@@ -292,7 +292,32 @@ if (isset($_SESSION["connecté"]) == 0 ):?>
                             $pseudo_id2 = $requete->fetch();
                         ?>
 
-                        <tr>
+                        <tr
+                        <?php
+                        if ($_SESSION["id_connecté"] == $historique['j1']){
+                            if ($historique['score_j1'] > $historique['score_j2']) {
+                        ?>
+                                class="table-warning"
+                        <?php
+                            }
+                            else {
+                        ?>
+                                class="table-danger"
+                        <?php
+                        }}
+                        if ($_SESSION["id_connecté"] == $historique['j2']){
+                            if ($historique['score_j2'] > $historique['score_j1']) {
+                        ?>
+                                class="table-warning"
+                        <?php
+                            }
+                            else {
+                        ?>
+                                class="table-danger"
+                        <?php
+                        }}
+                        ?>
+                        >
                             <th scope="row"><?= $historique['id'] ?></th>
                             <td><?= $pseudo_id1[0] ?></td>
                             <td><?= $pseudo_id2[0] ?></td>

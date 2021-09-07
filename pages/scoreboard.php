@@ -9,14 +9,12 @@
         <th scope="col">Score</th>
     </tr>
     </thead>
-    <tbody>
+    <tbody>²
+    <!--  Vérification de participation au match, de victoire et de défaite :  -->
     <?php foreach ($historique_profile as $historique):
-
         ?>
         <tr
         <?php
-        $j1 = htmlspecialchars($historique['j1']);
-        $j2 = htmlspecialchars($historique['j2']);
         if ($_SESSION["id_connecté"] == $historique['j1']){
             if ($historique['score_j1'] > $historique['score_j2']) {
         ?>
@@ -41,6 +39,7 @@
         }}
         ?>
         >
+            <!--  Statistiques du match :  -->
             <th scope="row"><?= $historique['id']?></th>
             <td><?= $historique['j1'] ?></td>
             <td><?= $historique['j2'] ?></td>
