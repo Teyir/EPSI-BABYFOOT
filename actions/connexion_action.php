@@ -2,14 +2,16 @@
 session_start();
 
 $pseudo = filter_input(INPUT_POST, "pseudo");
+$password = filter_input(INPUT_POST, "password");
 
+$password = sha1($password);
 
 
 require_once "../controller/db_connect.php";
 
-$requete = $pdo->prepare("SELECT id, pseudo, classe, ecole FROM users WHERE (pseudo=:pseudo)");
+$requete = $pdo->prepare("SELECT id, pseudo, classe, ecole FROM users WHERE (pseudo=:pseudo) AND (password=:password)");
 $requete->bindParam(":pseudo", $pseudo);
-
+$requete->bindParam(":password", $password);
 
 $requete->execute();
 

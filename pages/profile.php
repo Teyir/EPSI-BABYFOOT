@@ -3,24 +3,99 @@ if (isset($_SESSION["connecté"]) == 0 ):?>
 <div class="container register">
     <div class="row">
 
-        <div class="col-md-9 register-right">
-            <form action="actions/connexion_action.php" method="post">
-                <div class="tab-content" id="myTabContent">
-                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                        <h3 class="register-heading">Connexion</h3>
-                        <div class="row register-form">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Votre pseudo *" id="pseudo" name="pseudo" maxlength="12" required>
+        <ul class="nav nav-pills nav-fill mb-3" id="pills" role="tablist">
+            <li class="nav-item" role="presentation">
+                <a class="nav-link active" id="pills-connexion-tab" data-mdb-toggle="pill" href="#pills-connexion"
+                   role="tab" aria-controls="pills-connexion" aria-selected="true">
+                    Connexion
+                </a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" id="pills-inscription-tab" data-mdb-toggle="pill" href="#pills-inscription"
+                   role="tab" aria-controls="pills-inscription" aria-selected="false">
+                    Inscription
+                </a>
+            </li>
+
+
+
+        </ul>
+
+        <!-- Connexion -->
+        <div class="tab-content" id="pills-profile">
+            <div class="tab-pane fade show active" id="pills-connexion" role="tabpanel" aria-labelledby="pills-connexion-tab">
+                <div class="col-md-9 mx-auto">
+
+                    <form action="actions/connexion_action.php" method="post">
+
+                        <div class="form-outline mb-4">
+                            <input type="text" id="pseudo" name="pseudo" class="form-control" maxlength="12" required />
+                            <label class="form-label" for="pseudo">Pseudo</label>
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <input type="password" id="password" name="password" class="form-control" required/>
+                            <label class="form-label" for="password">Mot de passe</label>
+                        </div>
+
+
+                        <div class="text-center btnRegister">
+                            <input type="submit" class="btn btn-success"  value="Se connecter">
+                        </div>
+
+
+                    </form>
+                </div>
+            </div>
+
+            <!-- Inscription-->
+            <div class="tab-pane fade" id="pills-inscription" role="tabpanel" aria-labelledby="pills-inscription-tab">
+                <div class="tab-pane fade show active" id="pills-connexion" role="tabpanel" aria-labelledby="pills-connexion-tab">
+                    <div class="col-md-9 mx-auto">
+
+                        <form action="actions/inscription_action.php" method="post">
+
+                            <div class="form-outline mb-4">
+                                <input type="text" id="pseudo" name="pseudo" class="form-control" maxlength="12" required />
+                                <label class="form-label" for="pseudo">Pseudo</label>
+                            </div>
+
+                            <div class="row mb-4">
+                                <div class="col">
+                                    <div class="form-outline">
+                                        <input type="text" id="ecole" name="ecole" class="form-control" required/>
+                                        <label class="form-label" for="ecole">École</label>
+                                    </div>
                                 </div>
 
-                                <input type="submit" class="btnRegister"  value="Se connecter">
+                                <div class="col">
+                                    <div class="form-outline">
+                                        <input type="text" id="classe" name="classe" class="form-control" required/>
+                                        <label class="form-label" for="classe">Classe</label>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
+
+                            <div class="form-outline mb-4">
+                                <input type="password" id="password" name="password" class="form-control" required/>
+                                <label class="form-label" for="password">Mot de passe</label>
+                            </div>
+
+
+                            <div class="text-center btnRegister">
+                                <input type="submit" class="btn btn-success"  value="S'inscrire">
+                            </div>
+
+
+                        </form>
                     </div>
                 </div>
+            </div>
+
         </div>
-            </form>
+
+
+
     </div>
 </div>
 
@@ -37,9 +112,13 @@ if (isset($_SESSION["connecté"]) == 0 ):?>
                         <div class="card-body text-center">
                             <img src="assets/img/logo_placeholder.png" alt="avatar de <?= $_SESSION["pseudo"] ?>" class="rounded-circle img-fluid" style="width: 150px;">
                             <h5 class="my-3"><?= $_SESSION["pseudo"] ?></h5>
+                            <h5 class="text-muted mb-1 my-3"><strong>Victoires: </strong><?= htmlspecialchars($score[0]["victoires"]) ?></h5>
                             <h6 class="text-muted mb-1" data-mdb-toggle="tooltip" title="Le score total vous permet de débloquer de nouveaux emoji"><strong>Score total: </strong><?= htmlspecialchars($score[0]["score_total"]) ?></h6>
                             <h6 class="text-muted mb-1"><strong>Meilleur score: </strong><?= htmlspecialchars($score[0]["meilleur_score"]) ?></h6>
 
+                            <a href="actions/deconnexion.php" class="btn btn-danger" >
+                                <i class="fas fa-sign-out-alt"></i> Déconnexion
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -190,19 +269,33 @@ if (isset($_SESSION["connecté"]) == 0 ):?>
                 <table class="table">
                     <thead>
                     <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Joueur 1</th>
-                        <th scope="col">Joueur 2</th>
-                        <th scope="col">Score</th>
+                        <th class="font-weight-bold" scope="col">#</th>
+                        <th class="font-weight-bold" scope="col">Joueur 1</th>
+                        <th class="font-weight-bold" scope="col">Joueur 2</th>
+                        <th class="font-weight-bold" scope="col">Score</th>
                     </tr>
                     </thead>
                     <tbody>
                     <?php foreach ($historique_profile as $historique): ?>
 
+                        <?php
+                                //Affichage du pseudo du joueur 1
+                            $requete = $pdo->prepare("SELECT pseudo FROM users WHERE id=:id_j1");
+                            $requete->bindParam(":id_j1", $historique['j1']);
+                            $requete->execute();
+                            $pseudo_id1 = $requete->fetch();
+
+                                //Affichage du pseudo du joueur 1
+                            $requete = $pdo->prepare("SELECT pseudo FROM users WHERE id=:id_j2");
+                            $requete->bindParam(":id_j2", $historique['j2']);
+                            $requete->execute();
+                            $pseudo_id2 = $requete->fetch();
+                        ?>
+
                         <tr>
                             <th scope="row"><?= $historique['id'] ?></th>
-                            <td><?= $historique['j1'] ?></td>
-                            <td><?= $historique['j2'] ?></td>
+                            <td><?= $pseudo_id1[0] ?></td>
+                            <td><?= $pseudo_id2[0] ?></td>
                             <td><?= $historique['score_j1'] ?> : <?= $historique['score_j2'] ?></td>
                         </tr>
 

@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">GF</a>
+        <a class="navbar-brand" href="index.php?page=accueil">GF</a>
         <button
                 class="navbar-toggler"
                 type="button"
@@ -25,6 +25,9 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link <?php if ($_GET['page'] == 'profile'){echo "active";} ?>" href="index.php?page=profile">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link <?php if ($_GET['page'] == 'partie'){echo "active";} ?>" href="index.php?page=partie">Mode partie</a>
                 </li>
 
             </ul>

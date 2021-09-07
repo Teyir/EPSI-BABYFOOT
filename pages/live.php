@@ -6,7 +6,7 @@
             <div class="card mb-4">
                 <div class="card-body text-center">
                     <h5 class="my-3">Statistiques du joueur 1</h5>
-                    <h6 class="text-muted mb-1" data-mdb-toggle="tooltip" title="Le score total vous permet de débloquer de nouveaux emoji"><strong>Score total: </strong></h6>
+                    <h6 class="text-muted mb-1"><strong>Score total: </strong></h6>
                     <hr>
                     <h6 class="text-muted mb-1"><strong>Meilleur score: </strong></h6>
                     <hr>
@@ -49,7 +49,7 @@
             <div class="card mb-4">
                 <div class="card-body text-center">
                     <h5 class="my-3">Statistiques du joueur 2</h5>
-                    <h6 class="text-muted mb-1" data-mdb-toggle="tooltip" title="Le score total vous permet de débloquer de nouveaux emoji"><strong>Score total: </strong></h6>
+                    <h6 class="text-muted mb-1"><strong>Score total: </strong></h6>
                     <hr>
                     <h6 class="text-muted mb-1"><strong>Meilleur score: </strong></h6>
                     <hr>
