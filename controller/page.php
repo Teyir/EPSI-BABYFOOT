@@ -37,6 +37,12 @@ if(isset($_GET['page']))
             include('pages/live.php');
             break;
 
+        case 'partie':
+            unset($_GET['page']);
+            require_once('controller/partie.php');
+            include('pages/partie.php');
+            break;
+
 
 
         // Si le get est inconnue on l'envoie sur une page d'erreur
