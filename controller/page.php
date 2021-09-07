@@ -31,6 +31,13 @@ if(isset($_GET['page']))
             include('pages/profile.php');
             break;
 
+        case 'live':
+            unset($_GET['page']);
+            require_once('controller/live.php');
+            include('pages/live.php');
+            break;
+
+
 
         // Si le get est inconnue on l'envoie sur une page d'erreur
         default:

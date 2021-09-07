@@ -21,6 +21,9 @@
                     <a class="nav-link <?php if ($_GET['page'] == 'scoreboard'){echo "active";} ?>" href="index.php?page=scoreboard">Tableau des scores</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link <?php if ($_GET['page'] == 'live'){echo "active";} ?>" href="index.php?page=live">Partie en direct</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link <?php if ($_GET['page'] == 'profile'){echo "active";} ?>" href="index.php?page=profile">Profile</a>
                 </li>
 
