@@ -37,7 +37,7 @@ if (isset($_SESSION["connecté"]) == 0 ):?>
                         <div class="card-body text-center">
                             <img src="assets/img/logo_placeholder.png" alt="avatar de <?= $_SESSION["pseudo"] ?>" class="rounded-circle img-fluid" style="width: 150px;">
                             <h5 class="my-3"><?= $_SESSION["pseudo"] ?></h5>
-                            <h6 class="text-muted mb-1"><strong>Score total: </strong><?= htmlspecialchars($score[0]["score_total"]) ?></h6>
+                            <h6 class="text-muted mb-1" data-mdb-toggle="tooltip" title="Le score total vous permet de débloquer de nouveaux emoji"><strong>Score total: </strong><?= htmlspecialchars($score[0]["score_total"]) ?></h6>
                             <h6 class="text-muted mb-1"><strong>Meilleur score: </strong><?= htmlspecialchars($score[0]["meilleur_score"]) ?></h6>
 
                         </div>
@@ -94,14 +94,46 @@ if (isset($_SESSION["connecté"]) == 0 ):?>
 
                     <!-- Affichage des EMOJI de victoire -->
                     <div class="collapse mt-3" id="collapseEmojiWin">
-                        <a href="#" onclick="selEmoji();">
-                            <img class="emoji-preview" id="emoji" src="assets/img/emoji_goal.gif" alt="Emoji goal">
-                        </a>
+                       <form method="post" action="actions/emoji_win.php" >
+                            <label class="emoji-preview-content">
+                                <input type="radio" id="emoji_win" name="emoji_win" value="1"
+                                    <?php if ($emoji_win_id == 1){echo "checked"; }?>>
+                                <img class="emoji-preview emoji-preview-loose" src="assets/img/emoji_goal.gif" alt="Emoji goal">
+                            </label class="emoji-preview-content">
 
-                        <img class="emoji-preview" src="assets/img/emoji_russian.gif" alt="Emoji russian">
-                        <img class="emoji-preview" src="assets/img/emoji_money.gif" alt="Emoji money">
-                        <img class="emoji-preview" src="assets/img/emoji_king.gif" alt="Emoji king">
+                            <label class="emoji-preview-content">
+                                <input type="radio" id="emoji_win" name="emoji_win" value="2"
+                                    <?php if ($emoji_win_id == 2){echo "checked"; }?>
+                                        <?php if($score[0]["score_total"] <= 4){echo "disabled";}?>>
+                                <img class="emoji-preview emoji-preview-loose" src="assets/img/emoji_russian.gif" alt="Emoji russian">
+                                <?php if ($score[0]["score_total"] <= 4) :?>
+                                    <div class="emoji_score_unlock"><i class="fas fa-lock"></i> 5</div>
+                                <?php endif;?>
+                            </label>
 
+                            <label class="emoji-preview-content">
+                                <input type="radio" id="emoji_win" name="emoji_win" value="3"
+                                    <?php if ($emoji_win_id == 3){echo "checked"; }?>
+                                        <?php if($score[0]["score_total"] <= 9){echo "disabled";}?>>
+                                <img class="emoji-preview" src="assets/img/emoji_money.gif" alt="Emoji money">
+                                <?php if ($score[0]["score_total"] <= 9) :?>
+                                    <div class="emoji_score_unlock"><i class="fas fa-lock"></i> 10</div>
+                                <?php endif;?>
+                            </label>
+
+                            <label class="emoji-preview-content">
+                                <input type="radio" id="emoji_win" name="emoji_win" value="4"
+                                    <?php if ($emoji_win_id == 4){echo "checked"; }?>
+                                        <?php if($score[0]["score_total"] <= 14){echo "disabled";}?>>
+                                <img class="emoji-preview" src="assets/img/emoji_king.gif" alt="Emoji king">
+                                <?php if ($score[0]["score_total"] <= 14) :?>
+                                    <div class="emoji_score_unlock"><i class="fas fa-lock"></i> 15</div>
+                                <?php endif;?>
+                            </label>
+                            <hr>
+
+                           <input type="submit" class="btn btn-success"  value="Envoyer">
+                       </form>
 
                     </div>
 
@@ -109,8 +141,44 @@ if (isset($_SESSION["connecté"]) == 0 ):?>
 
                     <!-- Affichage des EMOJI de défaite -->
                     <div class="collapse mt-3" id="collapseEmojiLoose">
-                        <img class="emoji-preview" src="assets/img/logo_placeholder.png">
+                        <form method="post" action="actions/emoji_loose.php" >
+                            <label  class="emoji-preview-content">
+                                <input type="radio" id="emoji_loose" name="emoji_loose" value="1" <?php if ($emoji_loose_id == 1){echo "checked"; }?>>
+                                <img class="emoji-preview emoji-preview-loose" src="assets/img/emoji_cat_angry.gif" alt="Emoji cat angry">
+                            </label>
 
+                            <label class="emoji-preview-content">
+                                <input type="radio" id="emoji_loose" name="emoji_loose" value="2"
+                                    <?php if ($emoji_loose_id == 2){echo "checked"; }?>
+                                        <?php if($score[0]["score_total"] <= 4){echo "disabled";}?>>
+                                <img class="emoji-preview emoji-preview-loose" src="assets/img/emoji_fight.gif" alt="Emoji fight">
+                                <?php if ($score[0]["score_total"] <= 4) :?>
+                                    <div class="emoji_score_unlock"><i class="fas fa-lock"></i> 5</div>
+                                <?php endif;?>
+
+                            </label>
+
+                            <label  class="emoji-preview-content">
+                                <input type="radio" id="emoji_loose" name="emoji_loose" value="3" <?php if ($emoji_loose_id == 3){echo "checked"; }?>
+                                    <?php if($score[0]["score_total"] <= 9){echo "disabled";}?>>
+                                <img class="emoji-preview emoji-preview-loose" src="assets/img/emoji_monster.png" alt="Emoji monster">
+                                <?php if ($score[0]["score_total"] <= 9) :?>
+                                    <div class="emoji_score_unlock"><i class="fas fa-lock"></i> 10</div>
+                                <?php endif;?>
+                            </label>
+
+                            <label  class="emoji-preview-content">
+                                <input type="radio" id="emoji_loose" name="emoji_loose" value="4" <?php if ($emoji_loose_id == 4){echo "checked"; }?>
+                                    <?php if($score[0]["score_total"] <= 14){echo "disabled";}?>>
+                                <img class="emoji-preview emoji-preview-loose" src="assets/img/emoji_ragequitte.gif" alt="Emoji rage quitte">
+                                <?php if ($score[0]["score_total"] <= 14) :?>
+                                    <div class="emoji_score_unlock"><i class="fas fa-lock"></i> 15</div>
+                                <?php endif;?>
+                            </label>
+                            <hr>
+
+                            <input type="submit" class="btn btn-success"  value="Envoyer">
+                        </form>
 
                     </div>
 

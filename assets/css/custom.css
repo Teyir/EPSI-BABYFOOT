@@ -11,6 +11,43 @@
     width: 75px;
 }
 
-.emoji-preview-sel{
-    filter: drop-shadow(0 0 0.75rem #075ba7);
+.emoji-preview:hover{
+    filter: drop-shadow(0 0 0.30rem #3d3d3e);
+}
+
+
+/* Suppression des radio button */
+[type=radio] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+
+[type=radio] + img {
+    cursor: pointer;
+}
+
+[type=radio]:checked + img {
+    filter: drop-shadow(0 0 0.75rem #a811ba);
+}
+
+[type=radio]:disabled + img {
+    filter: none !important;
+    cursor: not-allowed !important;
+}
+
+.emoji-preview-content{
+    position: relative;
+    text-align: center;
+    color: whitesmoke;
+    font-weight: bold;
+}
+
+.emoji_score_unlock{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }

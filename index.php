@@ -48,6 +48,7 @@ require ("controller/db_connect.php")
     <meta name="description" content="Galactik Foosball - Baby Foot">
     <meta name="copyright" content="Thomas, Mathurin, Cameron, Mael, Amauryne, Lisa"/>
 
+    <link rel="icon" type="image/png" href="assets/img/logo.png" />
 
     <meta name="robots" content="follow, index, all, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 

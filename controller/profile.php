@@ -25,3 +25,21 @@ $historique_profile = $requete->fetchAll();
 
 //$requete = $pdo->prepare("SELECT pseudo FROM historique_matchs RIGHT JOIN users ON j2 = users.id");
 
+
+
+// ID EMOJI WIN
+
+$requete = $pdo->prepare("SELECT emoji_win FROM users WHERE pseudo=:pseudo");
+$requete->bindParam(":pseudo", $_SESSION['pseudo']);
+$requete->execute();
+$emoji_win_id = $requete->fetch();
+$emoji_win_id = $emoji_win_id[0];
+
+
+// ID EMOJI LOOSE
+
+$requete = $pdo->prepare("SELECT emoji_loose FROM users WHERE pseudo=:pseudo");
+$requete->bindParam(":pseudo", $_SESSION['pseudo']);
+$requete->execute();
+$emoji_loose_id = $requete->fetch();
+$emoji_loose_id = $emoji_loose_id[0];
