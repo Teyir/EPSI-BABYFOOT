@@ -14,6 +14,8 @@
                     <hr>
                     <h6 class="text-muted mb-1"><strong>Victoires: </strong></h6>
                     <hr>
+                    <h6 class="text-muted mb-1"><strong>Défaites: </strong></h6>
+                    <hr>
 
                 </div>
             </div>
@@ -74,6 +76,8 @@
                     <h6 class="text-muted mb-1"><strong>Score dernier match: </strong></h6>
                     <hr>
                     <h6 class="text-muted mb-1"><strong>Victoires: </strong></h6>
+                    <hr>
+                    <h6 class="text-muted mb-1"><strong>Défaites: </strong></h6>
                     <hr>
 
                 </div>

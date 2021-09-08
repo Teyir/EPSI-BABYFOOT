@@ -113,6 +113,7 @@ if (isset($_SESSION["connecté"]) == 0 ):?>
                             <img src="assets/img/logo_placeholder.png" alt="avatar de <?= $_SESSION["pseudo"] ?>" class="rounded-circle img-fluid" style="width: 150px;">
                             <h5 class="my-3"><?= $_SESSION["pseudo"] ?></h5>
                             <h5 class="text-muted mb-1 my-3"><strong>Victoires: </strong><?= htmlspecialchars($score[0]["victoires"]) ?></h5>
+                            <h6 class="text-muted mb-1"><strong>Defaites: </strong><?= htmlspecialchars($score[0]["defaites"]) ?></h6>
                             <h6 class="text-muted mb-1" data-mdb-toggle="tooltip" title="Le score total vous permet de débloquer de nouveaux emoji"><strong>Score total: </strong><?= htmlspecialchars($score[0]["score_total"]) ?></h6>
                             <h6 class="text-muted mb-1"><strong>Meilleur score: </strong><?= htmlspecialchars($score[0]["meilleur_score"]) ?></h6>
 

@@ -2,7 +2,7 @@
 
 //AFFICHAGE SCORE
 
-$requete = $pdo->prepare("SELECT victoires, score, meilleur_score, score_total FROM users WHERE pseudo =:pseudo");
+$requete = $pdo->prepare("SELECT victoires, defaites, score, meilleur_score, score_total FROM users WHERE pseudo =:pseudo");
 $requete->bindParam(":pseudo", $_SESSION['pseudo']);
 $requete->execute();
 
