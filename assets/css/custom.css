@@ -113,3 +113,16 @@
 .overlay-j2-pseudo{
     color: whitesmoke;
 }
+
+
+.img_scoreboard{
+    height: 30px;
+    width: 30px;
+    border-radius: 50% 50% 50% 50%;
+    margin-right: 5px;
+}
+
+.img_scoreboard:hover{
+    filter: drop-shadow(0 0 0.30rem #3d3d3e);
+    transition-duration: 0.2s;
+}

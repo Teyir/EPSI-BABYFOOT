@@ -110,7 +110,7 @@ if (isset($_SESSION["connecté"]) == 0 ):?>
                 <div class="col-lg-4">
                     <div class="card mb-4">
                         <div class="card-body text-center">
-                            <img src="assets/img/<?= $_SESSION["image_profile"] ?>" alt="avatar de <?= $_SESSION["pseudo"] ?>" class="rounded-circle img-fluid" style="width: 150px;">
+                            <img src="assets/img/<?= $_SESSION["image_profile"] ?>" alt="avatar de <?= $_SESSION["pseudo"] ?>" class="rounded-circle img-fluid">
                             <h5 class="my-3"><?= $_SESSION["pseudo"] ?></h5>
                             <h5 class="text-muted mb-1 my-3"><strong>Victoires: </strong><?= htmlspecialchars($score[0]["victoires"]) ?></h5>
                             <h6 class="text-muted mb-1"><strong>Defaites: </strong><?= htmlspecialchars($score[0]["defaites"]) ?></h6>
