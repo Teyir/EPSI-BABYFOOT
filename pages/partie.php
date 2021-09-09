@@ -1,22 +1,23 @@
 <?php
 if (!isset($infos_match[0])){
+    echo $_SESSION['erreur'];
     ?>
     <h1 class="text-center">Inscription au match</h1>
     <h2 class="text-center">Pour jouer, sélectionnez votre couleur :</h2>
 
 
+
     <form class="text-center" method="post" action="actions/jouer.php">
         <label>
-            <input name="couleur_joueurs" value="bleu">
-            <div class="carre_bleu"></div>
+            <input type="hidden" name="couleur_joueurs" value="bleu" selected="selected" class="btn btn-primary" cheked>
         </label>
-
+        <input type="submit" class="btn btn-primary btn-rounded"  value="Bleu">
+    </form>
+    <form class="text-center" method="post" action="actions/jouer.php">
         <label>
-            <input name="couleur_joueurs" value="rouge">
-            <div class="carre_rouge"></div>
+            <input type="hidden" name="couleur_joueurs" value="rouge" selected="selected" class="btn btn-primary" cheked>
         </label>
-
-        <input type="submit" class="btn btn-success"  value="Envoyer">
+        <input type="submit" class="btn btn-danger btn-rounded"  value="Rouge">
     </form>
     <?php
 }
