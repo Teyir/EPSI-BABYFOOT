@@ -7,3 +7,5 @@ RewriteRule ^live index.php?page=live [L]
 RewriteRule ^profile index.php?page=profile [L]
 RewriteRule ^scoreboard index.php?page=scoreboard [L]
 RewriteRule ^partie index.php?page=partie [L]
+RewriteRule ^admin index.php?page=admin [L]
+
