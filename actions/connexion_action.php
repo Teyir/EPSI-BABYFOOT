@@ -9,7 +9,7 @@ $password = sha1($password);
 
 require_once "../controller/db_connect.php";
 
-$requete = $pdo->prepare("SELECT id, pseudo, classe, ecole FROM users WHERE (pseudo=:pseudo) AND (password=:password)");
+$requete = $pdo->prepare("SELECT id, pseudo, classe, ecole, image_profile FROM users WHERE (pseudo=:pseudo) AND (password=:password)");
 $requete->bindParam(":pseudo", $pseudo);
 $requete->bindParam(":password", $password);
 
@@ -28,5 +28,6 @@ else {
     $_SESSION["pseudo"] = htmlspecialchars($lignes[0]["pseudo"]);
     $_SESSION["classe"] = htmlspecialchars($lignes[0]["classe"]);
     $_SESSION["ecole"] = htmlspecialchars($lignes[0]["ecole"]);
+    $_SESSION["image_profile"] = htmlspecialchars($lignes[0]["image_profile"]);
     header("location:../index.php?page=profile");
 }

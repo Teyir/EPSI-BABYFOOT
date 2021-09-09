@@ -6,5 +6,6 @@ $_SESSION["erreur"]= NULL;
 $_SESSION["pseudo"] = NULL;
 $_SESSION["classe"] = NULL;
 $_SESSION["ecole"] = NULL;
+$_SESSION["image_profile"] = NULL;
 
 header("location:../index.php?page=profile");

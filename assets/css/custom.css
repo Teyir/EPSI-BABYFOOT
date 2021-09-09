@@ -58,25 +58,71 @@
     margin-bottom: 50px;
 }
 
-.partie-emoji{
-    width: 180px;
-    height: 180px;
+
+/* Overlay */
+
+.overlay-content{
+    position: relative;
+    text-align: center;
 }
 
-.carre{
-    width: 180px;
-    height: 180px;
+.overlay-background-top{
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffff00;
+    border-radius: 10px 10px 10px 10px;
+    width: 200px;
+    padding-top: 5px;
+}
+
+.overlay-block-j1{
+    position: absolute;
+    top: 85%;
+    left: 9%;
+    transform: translate(-50%, -50%);
+    background-color: #0e0ec8;
+    border-radius: 50% 50% 50% 50%;
+    padding-top: 10px;
+    height: 120px;
+    width: 120px
+
+}
+
+.overlay-photo-profile{
+    height: 70px;
+    width: 70px;
+}
+
+.overlay-j1-pseudo{
     color: whitesmoke;
 }
 
-.carre_bleu{
-    width: 100px;
-    height: 100px;
-    color: blue;
+.overlay-block-j2{
+    position: absolute;
+    top: 85%;
+    right: -4%;
+    transform: translate(-50%, -50%);
+    background-color: #ec1841;
+    border-radius: 50% 50% 50% 50%;
+    padding-top: 10px;
+    height: 120px;
+    width: 120px
+}
+.overlay-j2-pseudo{
+    color: whitesmoke;
 }
 
-.carre_rouge{
-    width: 100px;
-    height: 100px;
-    color: red;
+
+.img_scoreboard{
+    height: 30px;
+    width: 30px;
+    border-radius: 50% 50% 50% 50%;
+    margin-right: 5px;
+}
+
+.img_scoreboard:hover{
+    filter: drop-shadow(0 0 0.30rem #3d3d3e);
+    transition-duration: 0.2s;
 }

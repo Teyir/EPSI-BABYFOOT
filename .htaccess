@@ -1,0 +1,9 @@
+#Url rewriting
+Options +FollowSymlinks
+RewriteEngine on
+
+RewriteRule ^accueil index.php?page=accueil [L]
+RewriteRule ^live index.php?page=live [L]
+RewriteRule ^profile index.php?page=profile [L]
+RewriteRule ^scoreboard index.php?page=scoreboard [L]
+RewriteRule ^partie index.php?page=partie [L]

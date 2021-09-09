@@ -110,9 +110,10 @@ if (isset($_SESSION["connecté"]) == 0 ):?>
                 <div class="col-lg-4">
                     <div class="card mb-4">
                         <div class="card-body text-center">
-                            <img src="assets/img/logo_placeholder.png" alt="avatar de <?= $_SESSION["pseudo"] ?>" class="rounded-circle img-fluid" style="width: 150px;">
+                            <img src="assets/img/<?= $_SESSION["image_profile"] ?>" alt="avatar de <?= $_SESSION["pseudo"] ?>" class="rounded-circle img-fluid">
                             <h5 class="my-3"><?= $_SESSION["pseudo"] ?></h5>
                             <h5 class="text-muted mb-1 my-3"><strong>Victoires: </strong><?= htmlspecialchars($score[0]["victoires"]) ?></h5>
+                            <h6 class="text-muted mb-1"><strong>Defaites: </strong><?= htmlspecialchars($score[0]["defaites"]) ?></h6>
                             <h6 class="text-muted mb-1" data-mdb-toggle="tooltip" title="Le score total vous permet de débloquer de nouveaux emoji"><strong>Score total: </strong><?= htmlspecialchars($score[0]["score_total"]) ?></h6>
                             <h6 class="text-muted mb-1"><strong>Meilleur score: </strong><?= htmlspecialchars($score[0]["meilleur_score"]) ?></h6>
 
@@ -173,7 +174,7 @@ if (isset($_SESSION["connecté"]) == 0 ):?>
 
                     <!-- Affichage des EMOJI de victoire -->
                     <div class="collapse mt-3" id="collapseEmojiWin">
-                       <form method="post" action="actions/emoji_win.php">
+                       <form method="post" action="actions/emoji_win.php" >
                             <label class="emoji-preview-content">
                                 <input type="radio" id="emoji_win" name="emoji_win" value="1"
                                     <?php if ($emoji_win_id == 1){echo "checked"; }?>>
@@ -285,7 +286,7 @@ if (isset($_SESSION["connecté"]) == 0 ):?>
                             $requete->execute();
                             $pseudo_id1 = $requete->fetch();
 
-                                //Affichage du pseudo du joueur 2
+                                //Affichage du pseudo du joueur 1
                             $requete = $pdo->prepare("SELECT pseudo FROM users WHERE id=:id_j2");
                             $requete->bindParam(":id_j2", $historique['j2']);
                             $requete->execute();
@@ -293,30 +294,30 @@ if (isset($_SESSION["connecté"]) == 0 ):?>
                         ?>
 
                         <tr
-                        <?php
-                        if ($_SESSION["id_connecté"] == $historique['j1']){
-                            if ($historique['score_j1'] > $historique['score_j2']) {
-                        ?>
-                                class="table-warning"
-                        <?php
-                            }
-                            else {
-                        ?>
-                                class="table-danger"
-                        <?php
-                        }}
-                        if ($_SESSION["id_connecté"] == $historique['j2']){
-                            if ($historique['score_j2'] > $historique['score_j1']) {
-                        ?>
-                                class="table-warning"
-                        <?php
-                            }
-                            else {
-                        ?>
-                                class="table-danger"
-                        <?php
-                        }}
-                        ?>
+                            <?php
+                            if ($_SESSION["id_connecté"] == $historique['j1']){
+                                if ($historique['score_j1'] > $historique['score_j2']) {
+                                    ?>
+                                    class="table-warning"
+                                    <?php
+                                }
+                                else {
+                                    ?>
+                                    class="table-danger"
+                                    <?php
+                                }}
+                            if ($_SESSION["id_connecté"] == $historique['j2']){
+                                if ($historique['score_j2'] > $historique['score_j1']) {
+                                    ?>
+                                    class="table-warning"
+                                    <?php
+                                }
+                                else {
+                                    ?>
+                                    class="table-danger"
+                                    <?php
+                                }}
+                            ?>
                         >
                             <th scope="row"><?= $historique['id'] ?></th>
                             <td><?= $pseudo_id1[0] ?></td>

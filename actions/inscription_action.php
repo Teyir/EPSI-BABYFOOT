@@ -28,15 +28,20 @@ if ($pseudoVerif[0] === $pseudo){
     die;
 }
 
+// Sélection d'une photo de profile aléatoire
+$rand_pp = rand(1,5);
+
+$pp = "pp_".$rand_pp.".png";
 
 //Si tout est bon on insert l'utilisateur dans la bdd
 $var = array(
     'pseudo' => $pseudo,
     'ecole' => $ecole,
     'classe' => $classe,
-    'password' => $password
+    'password' => $password,
+    'image_profile' => $pp
 );
-$sql = "INSERT INTO users (pseudo, ecole, classe, password) values (:pseudo, :ecole, :classe, :password)";
+$sql = "INSERT INTO users (pseudo, ecole, classe, password, image_profile) values (:pseudo, :ecole, :classe, :password, :image_profile)";
 
 $requete = $pdo->prepare($sql);
 $requete->execute($var);

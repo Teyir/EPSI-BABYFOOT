@@ -14,6 +14,8 @@
                     <hr>
                     <h6 class="text-muted mb-1"><strong>Victoires: </strong></h6>
                     <hr>
+                    <h6 class="text-muted mb-1"><strong>Défaites: </strong></h6>
+                    <hr>
 
                 </div>
             </div>
@@ -24,15 +26,34 @@
         <div class="col-lg-8">
             <!-- Score -->
             <div class="mb-4 text-center">
-                <h1><strong class="text-info">4</strong> - <strong class="text-secondary">8</strong></h1>
+
 
             </div>
 
             <!-- Fenêtre live streaming -->
-            <div class="card mb-10 text-center">
+            <div class="card mb-10 text-center overlay-content">
 
-                LIVE
-                <div style="background-color: #6f42c1; height: 400px"></div>
+                    <!-- Flux vidéo: http://192.168.43.235:8000/stream.mjpg -->
+                <img src="assets/img/placeholder_stream.png">
+               <!-- <img src="http://192.168.43.235:8000/stream.mjpg"> -->
+
+                <div class="overlay-background-top">
+                    <h1><strong class="text-info">4</strong> - <strong class="text-secondary">8</strong></h1>
+                </div>
+
+                <!-- Joueur 1-->
+                <div class="overlay-block-j1">
+                    <img class="overlay-photo-profile" src="assets/img/logo_placeholder.png"><br>
+                    <span class="overlay-j1-pseudo">JOUEUR 1</span>
+                </div>
+
+                <!-- Joueur 2-->
+                <div class="overlay-block-j2">
+                    <img class="overlay-photo-profile" src="assets/img/logo_placeholder.png"><br>
+                    <span class="overlay-j2-pseudo">JOUEUR 2</span>
+                </div>
+
+
 
             </div>
 
@@ -56,6 +77,8 @@
                     <h6 class="text-muted mb-1"><strong>Score dernier match: </strong></h6>
                     <hr>
                     <h6 class="text-muted mb-1"><strong>Victoires: </strong></h6>
+                    <hr>
+                    <h6 class="text-muted mb-1"><strong>Défaites: </strong></h6>
                     <hr>
 
                 </div>
