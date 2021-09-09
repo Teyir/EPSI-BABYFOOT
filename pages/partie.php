@@ -63,13 +63,13 @@ else {
         ?> <h1 class="text-center"><?php echo $infos_match['score_j2'], " / ", $infos_match['score_j1'] ?></h1> <?php
     }
 
-    if ($infos_match['j1'] == $_SESSION['connecté']){
+    if (1 == $_SESSION['connecté']){
         $requete = $pdo->prepare("SELECT pseudo, classe, ecole FROM users WHERE id=:id");
         $requete->bindParam(":id", $infos_match['j2']);
         $requete->execute();
         $adversaire = $requete->fetch();
     }
-    else if ($infos_match['j2'] == $_SESSION['connecté']){
+    if (2 == $_SESSION['connecté']){
         $requete = $pdo->prepare("SELECT pseudo, classe, ecole FROM users WHERE id=:id");
         $requete->bindParam(":id", $infos_match['j1']);
         $requete->execute();

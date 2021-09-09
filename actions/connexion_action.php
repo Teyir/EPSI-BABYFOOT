@@ -23,7 +23,7 @@ if (count($lignes)==0){
 }
 else {
     $_SESSION["id_connecté"]= htmlspecialchars($lignes[0]["id"]);
-    $_SESSION["connecté"]= 1;
+    $_SESSION["connecté"]= htmlspecialchars($lignes[0]["id"]);
     $_SESSION["erreur"]= 0;
     $_SESSION["pseudo"] = htmlspecialchars($lignes[0]["pseudo"]);
     $_SESSION["classe"] = htmlspecialchars($lignes[0]["classe"]);
