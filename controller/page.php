@@ -43,6 +43,12 @@ if(isset($_GET['page']))
             include('pages/partie.php');
             break;
 
+        case 'admin':
+            unset($_GET['page']);
+            require_once('controller/admin.php');
+            include('pages/admin.php');
+            break;
+
 
 
         // Si le get est inconnue on l'envoie sur une page d'erreur

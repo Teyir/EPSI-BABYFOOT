@@ -37,7 +37,7 @@
                 <img src="assets/img/placeholder_stream.png">
                <!-- <img src="http://192.168.43.235:8000/stream.mjpg"> -->
 
-                <div class="overlay-background-top">
+                <div class="overlay-background-top" id="overlay_score">
                     <h1><strong class="text-info">4</strong> - <strong class="text-secondary">8</strong></h1>
                 </div>
 
