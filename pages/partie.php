@@ -1,6 +1,5 @@
 <?php
 if (!isset($infos_match[0])){
-    echo $_SESSION['erreur'];
     ?>
     <h1 class="text-center">Inscription au match</h1>
     <h2 class="text-center">Pour jouer, sélectionnez votre couleur :</h2>
