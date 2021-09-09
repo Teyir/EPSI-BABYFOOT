@@ -173,7 +173,7 @@ if (isset($_SESSION["connecté"]) == 0 ):?>
 
                     <!-- Affichage des EMOJI de victoire -->
                     <div class="collapse mt-3" id="collapseEmojiWin">
-                       <form method="post" action="actions/emoji_win.php" >
+                       <form method="post" action="actions/emoji_win.php">
                             <label class="emoji-preview-content">
                                 <input type="radio" id="emoji_win" name="emoji_win" value="1"
                                     <?php if ($emoji_win_id == 1){echo "checked"; }?>>
@@ -285,7 +285,7 @@ if (isset($_SESSION["connecté"]) == 0 ):?>
                             $requete->execute();
                             $pseudo_id1 = $requete->fetch();
 
-                                //Affichage du pseudo du joueur 1
+                                //Affichage du pseudo du joueur 2
                             $requete = $pdo->prepare("SELECT pseudo FROM users WHERE id=:id_j2");
                             $requete->bindParam(":id_j2", $historique['j2']);
                             $requete->execute();

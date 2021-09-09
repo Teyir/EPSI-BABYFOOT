@@ -57,3 +57,26 @@
 .btnRegister{
     margin-bottom: 50px;
 }
+
+.partie-emoji{
+    width: 180px;
+    height: 180px;
+}
+
+.carre{
+    width: 180px;
+    height: 180px;
+    color: whitesmoke;
+}
+
+.carre_bleu{
+    width: 100px;
+    height: 100px;
+    color: blue;
+}
+
+.carre_rouge{
+    width: 100px;
+    height: 100px;
+    color: red;
+}
