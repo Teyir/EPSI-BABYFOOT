@@ -7,12 +7,12 @@ if (!isset($infos_match[0])){
 
     <form class="text-center" method="post" action="actions/jouer.php">
         <label>
-            <input type="radio" name="couleur_joueurs" value="bleu">
+            <input name="couleur_joueurs" value="bleu">
             <div class="carre_bleu"></div>
         </label>
 
         <label>
-            <input type="radio" name="couleur_joueurs" value="rouge">
+            <input name="couleur_joueurs" value="rouge">
             <div class="carre_rouge"></div>
         </label>
 
