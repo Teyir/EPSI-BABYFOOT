@@ -2,7 +2,7 @@
 // Session
 session_start();
 // Erreur
-ini_set('display_errors', 1);
+ini_set('display_errors', 0);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 //Timezone
@@ -58,7 +58,9 @@ require ("controller/db_connect.php")
     <link rel="stylesheet" type="text/css" href="assets/css/fa-all.css">
     <link rel="stylesheet" type="text/css" href="assets/css/custom.css">
 
+
 </head>
+
 <body>
 
 <?php
