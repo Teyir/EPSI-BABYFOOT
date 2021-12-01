@@ -1,0 +1,128 @@
+
+
+
+
+
+
+/* Profils → Emoji collapse */
+
+.emoji-preview{
+    height: 75px;
+    width: 75px;
+}
+
+.emoji-preview:hover{
+    filter: drop-shadow(0 0 0.30rem #3d3d3e);
+}
+
+
+/* Suppression des radio button */
+[type=radio] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+
+[type=radio] + img {
+    cursor: pointer;
+}
+
+[type=radio]:checked + img {
+    filter: drop-shadow(0 0 0.75rem #a811ba);
+}
+
+[type=radio]:disabled + img {
+    filter: none !important;
+    cursor: not-allowed !important;
+}
+
+.emoji-preview-content{
+    position: relative;
+    text-align: center;
+    color: whitesmoke;
+    font-weight: bold;
+}
+
+.emoji_score_unlock{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+
+.btnRegister{
+    margin-bottom: 50px;
+}
+
+
+/* Overlay */
+
+.overlay-content{
+    position: relative;
+    text-align: center;
+}
+
+.overlay-background-top{
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffff00;
+    border-radius: 10px 10px 10px 10px;
+    width: 200px;
+    padding-top: 5px;
+}
+
+.overlay-block-j1{
+    position: absolute;
+    top: 85%;
+    left: 9%;
+    transform: translate(-50%, -50%);
+    background-color: #0e0ec8;
+    border-radius: 50% 50% 50% 50%;
+    padding-top: 10px;
+    height: 120px;
+    width: 120px
+
+}
+
+.overlay-photo-profile{
+    height: 70px;
+    width: 70px;
+}
+
+.overlay-j1-pseudo{
+    color: whitesmoke;
+}
+
+.overlay-block-j2{
+    position: absolute;
+    top: 85%;
+    right: -4%;
+    transform: translate(-50%, -50%);
+    background-color: #ec1841;
+    border-radius: 50% 50% 50% 50%;
+    padding-top: 10px;
+    height: 120px;
+    width: 120px
+}
+.overlay-j2-pseudo{
+    color: whitesmoke;
+}
+
+
+.img_scoreboard{
+    height: 30px;
+    width: 30px;
+    border-radius: 50% 50% 50% 50%;
+    margin-right: 5px;
+}
+
+.img_scoreboard:hover{
+    filter: drop-shadow(0 0 0.30rem #3d3d3e);
+    transition-duration: 0.2s;
+}
