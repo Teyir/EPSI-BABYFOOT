@@ -5,10 +5,10 @@
 //    Pour faire fonctionner ce fichier il faut l'include manuellement    //
 //                                                                        //
 ////////////////////////////////////////////////////////////////////////////
-$host = "46.105.41.104";
-$db = "workshop";
-$user = "workshop";
-$password = "eg69q7N@";
+$host = "";
+$db = "";
+$user = "";
+$password = "";
 
 
 $pdo = new PDO('mysql:host='.$host.';dbname='.$db.';charset=utf8', $user, $password);
